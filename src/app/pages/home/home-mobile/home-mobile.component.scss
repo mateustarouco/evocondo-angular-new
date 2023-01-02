@@ -1,0 +1,121 @@
+@use '../../../../colors' as col;
+
+.container {
+  overflow: hidden;
+  position: relative;
+  min-width: 100vw;
+  height: calc(100vh - 90px);
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  height: calc(100% - 150px);
+  position: relative;
+
+  .next-assembly {
+    margin: 20px 0 0 0;
+    height: calc(100% - 130px);
+    padding: 0 50px 50px 60px;
+    overflow: scroll;
+    position: relative;
+
+  }
+}
+
+.data {
+  font-weight: 500;
+  color: map-get(col.$personal-warn, 700);
+  font-size: .9rem;
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background: map-get(col.$personal-warn, 700);
+  position: relative;
+}
+
+.bar::before {
+  position: absolute;
+  right: -2.5px;
+  top: -3.5px;
+  content: "";
+  background: map-get(col.$personal-warn, 700);
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  display: block;
+}
+
+mat-card {
+  width: 90vw;
+  min-height: 140px;
+  margin: 0 5vw;
+  padding: 10px 30px 30px 30px;
+  position: absolute;
+  bottom: 0;
+  background: map-get(col.$personal-accent, 100) !important;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 30px;
+
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: map-get(col.$personal-accent, 400) !important;
+
+    span {
+      text-align: center;
+      font-weight: 400;
+    }
+
+    label {
+      color: map-get(col.$personal-accent, 100) !important;
+      background: map-get(col.$personal-accent, 400) !important;
+      padding:5px;
+      width: 100px;
+      height: 100px;
+      margin: 5px auto;
+      border-radius: 60px;
+      display: flex;justify-content: center;align-items: center;
+    }
+  }
+}
+
+.value {
+  color: #ffffff !important;
+}
+
+.status {
+  width: 30px !important;
+  height: 30px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50px;
+  background: map-get(col.$personal-accent, 400);
+}
+
+.description {
+  color: map-get(col.$personal-warn, 700);
+  font-size: .9rem;
+  font-weight: 500;
+
+  p {
+    font-size: .7rem;
+    font-weight: 400;
+  }
+}
+
+.shadow_ {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 100px;
+  width: 99vw;
+  //margin: 0 0 0 5vw;
+  background: linear-gradient(to bottom, rgba(255,0,0,0), map-get(col.$personal-primary, 800), map-get(col.$personal-primary, 800));
+}

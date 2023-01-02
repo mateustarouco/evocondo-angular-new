@@ -1,0 +1,274 @@
+$dark-primary-text: #212121;
+$light-primary-text: #e7e1e1;
+//$light-primary-text: #cbb8b8;
+
+$personal-primary: (
+  50: #FDFDFD,
+  75:  #FDFDFD50,
+  100: #FBFBFB,
+  200: #F8F8F8,
+  300: #F5F5F5,
+  400: #F2F2F2,
+  500: #F0F0F0,
+  600: #EEEEEE,
+  700: #e0e0e0,
+  800: #E5E5E5,
+  900: #E5E5E5,
+  950: #E5E5E550,
+  A100: #FFFFFF,
+  A200: #FFFFFF,
+  A400: #FFFFFF,
+  A700: #FFFFFF,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+
+$personal-accent: (
+  50:  #E7E7E7,
+  100: #C3C3C3,
+  200: #9C9C9C,
+  300: #747474,
+  400: #565656,
+  500: #383838,
+  600: #323232,
+  700: #2B2B2B,
+  800: #242424,
+  900: #171717,
+  A100: #8C8C8C,
+  A200: #5D5D5D,
+  A400: #3B3B3B,
+  A700: #181818,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$personal-warn: (
+  50: #F5E7E850,
+  100: #F5E7E8,
+  200: #E7C2C5,
+  300: #D7999F,
+  400: #C67079,
+  500: #A72E39,
+  600: #AE333F,
+  700: #A72E39,
+  800: #9D2731,
+  900: #942029,
+  950: #942029,
+  A100: #A72E39,
+  A200: #9D2731,
+  A400: #942029,
+  A700: #942029,
+  contrast: (
+    50:  $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$dark-orange-warn: (
+  50: #F8E9E0,
+  100: #EDC9B3,
+  200: #E2A580,
+  300: #D6804D,
+  400: #CD6526,
+  500: #C44A00,
+  600: #BE4300,
+  700: #BE4300,
+  800: #B63A00,
+  900: #A22200,
+  950: #A22200,
+  A100: #FFD3CC,
+  A200: #FFA799,
+  A400: #FF7B66,
+  A700: #FF654D,
+  contrast: (
+    50:  $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+//$personal-warn: (
+//  50: #F8E9E0,
+//  100: #EDC9B3,
+//  200: #E2A580,
+//  300: #D6804D,
+//  400: #CD6526,
+//  500: #C44A00,
+//  600: #BE4300,
+//  700: #BE4300,
+//  800: #B63A00,
+//  900: #A22200,
+//  950: #A22200,
+//  A100: #FFD3CC,
+//  A200: #FFA799,
+//  A400: #FF7B66,
+//  A700: #FF654D,
+//  contrast: (
+//    50:  $light-primary-text,
+//    100: $light-primary-text,
+//    200: $light-primary-text,
+//    300: $light-primary-text,
+//    400: $light-primary-text,
+//    500: $light-primary-text,
+//    600: $light-primary-text,
+//    700: $light-primary-text,
+//    800: $light-primary-text,
+//    900: $light-primary-text,
+//    A100: $light-primary-text,
+//    A200: $light-primary-text,
+//    A400: $light-primary-text,
+//    A700: $light-primary-text,
+//  )
+//);
+
+$accent: (
+  100: #DEDACB,
+  200: #C1BBA6,
+);
+
+
+$attention: (
+  100:#77dc3d,
+  200:#dcaa3d,
+  300:#8c0202,
+  //300:#dc3d3d,
+);
+
+.def {
+  ::ng-deep .mat-icon {
+    margin: 5px 0!important;
+    width: 100%!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    //color: map-get($personal-accent,500)!important;
+
+  }
+}
+.main{
+  font-weight: 600;
+  color: map-get($personal-primary,200);
+}
+button.def{
+  border: 2px solid map-get($personal-warn,900);
+}
+.border{
+  border: 2px solid map-get($personal-primary,400);
+}
+.primary{
+  background: map-get($personal-primary,400)!important;
+  color: map-get($personal-accent,500)!important;;
+}
+.primary-list {
+  background: transparent;
+  color: map-get($personal-accent,500)!important;;
+}
+.warn{
+  background: map-get($personal-warn,400)!important;
+  color: map-get($personal-primary,500)!important;;
+}
+.accent{
+  background: map-get($personal-primary,700)!important;
+}
+
+.mat-datepicker-content-container{
+  background: map-get($personal-primary,500)!important;
+}
+
+
+::ng-deep .mat-form-field-label {
+  color: map-get($personal-accent,700)!important;
+}
+
+::ng-deep .mat-form-field-underline {
+  background-color: map-get($personal-accent,700);
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: map-get($personal-accent,700);
+}
+
+::ng-deep .mat-form-field-label {
+  color: map-get($personal-accent,700);
+}
+
+::ng-deep .mat-form-field-flex{
+  ::ng-deep .mat-button-wrapper{
+    color: map-get($personal-accent,700);
+  }
+}
+input {
+  caret-color: map-get($personal-accent,700)!important;
+}
+textarea{
+  caret-color: map-get($personal-accent,700)!important;
+  color: map-get($personal-accent,600)!important;
+}
+
+input:focus {
+  background: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: map-get($personal-accent, 700);
+  -webkit-box-shadow: 0 0 0px 1000px map-get($personal-primary, 900) inset;}
+
+::ng-deep .mat-paginator .mat-icon-button{
+  background-color: unset!important;
+  color: map-get($personal-warn, 700)!important;
+  fill: map-get($personal-warn, 700)!important;
+}

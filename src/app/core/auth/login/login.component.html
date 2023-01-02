@@ -1,0 +1,184 @@
+<div class="bg"></div>
+<mat-progress-bar mode="indeterminate" color="warn" class="{{loading ? 'in' : 'out'}}"></mat-progress-bar>
+
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+
+    <div class="col-12 col-lg-3 order-md-0 order-2 redefine " *ngIf="redefineStatus == 1">
+      <mat-card class="main mat-elevation-z0">
+        <span class="mb-3">Sua Senha precisa de:</span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{mai.test(confirmNewPasswordForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Letra Maiúscula
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{min.test(confirmNewPasswordForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Letra Minúscula
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{num.test(confirmNewPasswordForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Número
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{regex.test(confirmNewPasswordForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Caractere especial
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{confirmNewPasswordForm.getRawValue()['newPassword'].length >= 8 ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          no minimo 8 caracteres
+        </span>
+      </mat-card>
+    </div>
+    <div class="col-12 col-lg-3 order-md-0 order-2 redefine" *ngIf="needChangePassword">
+      <mat-card class="main mat-elevation-z0">
+        <span class="mb-3">Sua Senha precisa de:</span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{mai.test(redefineForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Letra Maiúscula
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{min.test(redefineForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Letra Minúscula
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{num.test(redefineForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Número
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{regex.test(redefineForm.getRawValue()['newPassword']) ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          Caractere especial
+        </span>
+        <span class="d-flex align-items-center">
+        <mat-icon svgIcon="{{redefineForm.getRawValue()['newPassword'].length >= 8 ? 've' : 'xis'}}"
+                  class="m-2"></mat-icon>
+          no minimo 8 caracteres
+        </span>
+      </mat-card>
+    </div>
+    <div class="col-lg-5 col-md-8 col-12 ">
+      <mat-card class="mat-elevation-z0 pt-3 pb-3 main">
+
+
+        <mat-card-title class="text text-center mb-3">
+          <p class="log-in">
+            Log<span>in</span>
+          </p>
+        </mat-card-title>
+        <mat-divider class="divider"></mat-divider>
+
+        <form class="d-flex justify-content-end flex-column" [formGroup]="loginForm"
+              *ngIf="!needChangePassword && !newPassword">
+
+          <mat-form-field appearance="standard" color="warn">
+            <mat-label>E-Mail</mat-label>
+            <input matInput formControlName="email">
+            <mat-error>e-mail inválido</mat-error>
+          </mat-form-field> <!--e-mail-->
+
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>Senha</mat-label>
+            <input class="deley" matInput type="{{hide}}" formControlName="password">
+            <mat-icon class="eye deley" color="warn" (click)="toglePassView($event)" svgIcon="{{icon}}"></mat-icon>
+            <mat-error>Senha Incorreta</mat-error>
+          </mat-form-field> <!--senha-->
+
+          <div class="error" *ngIf="error">
+            {{errorMessage}}
+          </div>
+          <div class="button">
+            <button mat-raised-button class="def" color="warn" (click)="onSubmit()"> Entrar</button>
+          </div>
+          <div class="col-12 d-flex justify-content-center pt-3">
+            <span class="redefine-pass" (click)="redefinePassword()"><u>Recuperar Senha</u></span>
+          </div>
+
+        </form>
+
+        <form class="d-flex justify-content-end flex-column" *ngIf="needChangePassword" [formGroup]="redefineForm">
+          <span class="text p-3 text-center">Você precisa redefinir sua Senha</span>
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>Nova Senha</mat-label>
+            <input class="deley" matInput type="{{hide}}" formControlName="newPassword" >
+            <mat-icon class="eye deley" (click)="toglePassView($event)" color="warn" svgIcon="{{icon}}"></mat-icon>
+            <mat-error>Senha Incorreta</mat-error>
+          </mat-form-field> <!--senha-->
+
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>Nova Senha</mat-label>
+            <input class="deley" matInput type="{{hide}}" formControlName="newPasswordConfirm">
+            <mat-icon class="eye deley" (click)="toglePassView($event)" color="warn" svgIcon="{{icon}}"></mat-icon>
+            <mat-error>Senha Incorreta</mat-error>
+
+          </mat-form-field> <!--senha-->
+
+          <button mat-raised-button color="warn" class="def mt-5"
+                  [disabled]="!checkPass()"
+                  (click)="onSubmit()"> Entrar
+          </button>
+        </form>
+
+        <form class="d-flex justify-content-end flex-column" *ngIf="newPassword && redefineStatus == 0"
+              [formGroup]="newPasswordForm">
+          <span class="text p-3 text-center">Vamos redefinir sua Senha!</span>
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>E-Mail</mat-label>
+            <input class="deley" matInput type="email" formControlName="email">
+            <mat-error>Email incorreto</mat-error>
+          </mat-form-field> <!--senha-->
+          <button mat-raised-button color="warn" class="mt-5 def" (click)="sendCode()"> Enviar Código</button>
+          <button mat-raised-button color="warn" class="mt-2 def" (click)="back()"> voltar</button>
+        </form>
+
+        <form class="d-flex justify-content-end flex-column" *ngIf="newPassword && redefineStatus == 1"
+              [formGroup]="confirmNewPasswordForm">
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>código de confirmação</mat-label>
+            <input class="deley" matInput type="text" formControlName="code" mask="000000">
+            <mat-error>Código inválido</mat-error>
+          </mat-form-field> <!--codigo-->
+
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>Nova Senha</mat-label>
+            <input class="deley" matInput type="{{hide}}" formControlName="newPassword">
+            <mat-icon class="eye deley" color="warn" svgIcon="{{icon}}"></mat-icon>
+          </mat-form-field> <!--senha-->
+
+          <mat-form-field appearance="standard" color="warn" class="pb-3">
+            <mat-label>Confirma Senha</mat-label>
+            <input class="deley" matInput type="{{hide}}" formControlName="confirmNewPassword">
+            <mat-icon class="eye deley" (click)="toglePassView($event)" color="warn" svgIcon="{{icon}}"></mat-icon>
+            <mat-error>Senha Incorreta</mat-error>
+          </mat-form-field> <!--senha-->
+          <button mat-raised-button color="warn" class="mt-5 def"
+                  disabled="{{confirmNewPasswordForm.getRawValue()['newPassword'] != confirmNewPasswordForm.getRawValue()['confirmNewPassword']}}"
+
+                  (click)="confirmNewPassword()"> Redefinir Senha
+          </button>
+          <button mat-raised-button color="warn" class="mt-2 def" (click)="back()"> voltar</button>
+        </form>
+
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+<div class="position status-active">
+  <section>
+    <div class="waves">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+    </div>
+  </section>
+</div>

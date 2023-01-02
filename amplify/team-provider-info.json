@@ -1,0 +1,35 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-evocondo-dev-160128-authRole",
+      "UnauthRoleArn": "arn:aws:iam::632217933496:role/amplify-evocondo-dev-160128-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::632217933496:role/amplify-evocondo-dev-160128-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-evocondo-dev-160128-deployment",
+      "UnauthRoleName": "amplify-evocondo-dev-160128-unauthRole",
+      "StackName": "amplify-evocondo-dev-160128",
+      "StackId": "arn:aws:cloudformation:us-east-2:632217933496:stack/amplify-evocondo-dev-160128/17a3b910-86e2-11ed-a5bc-029c8f2428bc",
+      "AmplifyAppId": "d3o1eagfqi53hh"
+    },
+    "categories": {
+      "auth": {
+        "evocondo9157112e": {
+          "userPoolId": "us-east-2_CTcw7msQb",
+          "userPoolName": "evocondo-dev-company-user-pool",
+          "webClientId": "2t5nspagj9tgl5n3pedd9q19nv",
+          "nativeClientId": "2t5nspagj9tgl5n3pedd9q19nv",
+          "identityPoolId": "us-east-2:df3493ab-3ad4-4589-87e0-14e13925baa2",
+          "identityPoolName": "evocondo-dev-company-identity",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::632217933496:role/Cognito_evocondodevcompanyidentityAuth_Role_",
+          "authRoleName": "Cognito_evocondodevcompanyidentityAuth_Role_",
+          "unauthRoleArn": "arn:aws:iam::632217933496:role/Cognito_evocondodevcompanyidentityUnauth_Role_",
+          "unauthRoleName": "Cognito_evocondodevcompanyidentityUnauth_Role_"
+        }
+      },
+      "storage": {
+        "evocondodata": {}
+      }
+    }
+  }
+}

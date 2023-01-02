@@ -1,0 +1,55 @@
+@use '../../../colors' as col;
+
+
+.card- {
+  min-height: 200px;
+  position: relative;
+  background: map-get(col.$personal-warn, 700);
+  border-bottom-left-radius: 40px;
+  border-bottom: solid 2px map-get(col.$personal-warn, 700);
+
+  .button_ {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  img {
+    height: 50%;
+    position: absolute;
+    left: 25px;
+    opacity: .8;
+    top: calc(50% - 20px);
+  }
+}
+
+.card-::after {
+  position: absolute;
+  bottom: -51.5px;
+  right: 0;
+  content: "";
+  background: map-get(col.$personal-primary, 900);
+  width: 50px;
+  height: 50px;
+  border-top-right-radius: 50px;
+  display: block;
+  box-shadow: -3px 0 map-get(col.$personal-primary, 900),
+  0px 3px map-get(col.$personal-primary, 900),
+  -3px 3px map-get(col.$personal-primary, 900);
+}
+
+.card-::before {
+  position: absolute;
+  bottom: -50px;
+  box-shadow: 0px -4px map-get(col.$personal-warn, 700);
+  right: 0;
+  content: "";
+  background: map-get(col.$personal-warn, 700);
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.content_header {
+  padding: 25px;
+}

@@ -1,0 +1,196 @@
+@use '../../../../colors' as col;
+@import "login.mobile.component";
+
+.row{
+  height: 100vh;
+  color: map-get(col.$personal-accent, 400);
+}
+::ng-deep .mat-form-field{
+  width: 100%!important;
+}
+span{
+  color: map-get(col.$personal-accent, 400)!important;
+}
+.password{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  span{
+    margin-right: 5px!important;
+  }
+}
+::ng-deep .mat-card{
+  overflow: hidden;
+  background: map-get(col.$personal-primary,900);
+  padding: 50px 30px!important;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: map-get(col.$personal-accent, 700);
+  -webkit-box-shadow: 0 0 0px 1000px map-get(col.$personal-primary, 900) inset;
+}
+::ng-deep .mat-form-field {
+  width: 100%;
+}
+::ng-deep .mat-form-field-label{
+  color: map-get(col.$personal-primary, 700);
+}
+.eye{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.deley{
+  transition-delay: 5s;
+}
+.bg{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: map-get(col.$personal-primary, 500);
+}
+.button{
+  margin-top: 20px;
+  button{
+    z-index: 50;
+    height: 36px;
+    width: 100%;
+  }
+  position: relative;
+  width: 100%;
+  height: 36px;
+}
+.error{
+  color: map-get(col.$attention,300)!important;
+  animation: err 1s ease;
+}
+.in{
+  top: 5px;
+  transition-duration: 1s;
+}
+.out{
+  top: -5px;
+  transition: .5s;
+
+}
+.mat-progress-bar{
+  transition: .5s;
+  position: absolute;
+  left: 0;
+}
+@keyframes err {
+  0%,100%{
+    transform: translate(0,0);
+  }
+  10%{
+    transform: translate(5px,3px);
+  }
+  20%{
+    transform: translate(-1px,-2px);
+  }
+  30%{
+    transform: translate(1px,2px);
+  }
+  40%{
+    transform: translate(-3px,-3px);
+  }
+  50%{
+    transform: translate(0px,1px);
+  }
+}
+section{
+  .wave{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("../../../../assets/images/wave.png");
+    background-size: 1000px 100px;
+  }
+  .wave.wave1{
+    animation: animate 5s linear infinite;
+    z-index: 1000;
+    opacity: .25;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  .wave.wave2{
+    animation: animate2 5s linear infinite;
+    z-index: 1000;
+    opacity: .25;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  .wave.wave3{
+    animation: animate 5s linear infinite;
+    z-index: 1000;
+    opacity:.5;
+    animation-delay: 2s;
+    bottom: 0;
+  }
+  .wave.wave4{
+    animation: animate2 5s linear infinite;
+    z-index: 1000;
+    opacity: .5;
+    animation-delay: 1s;
+    bottom: 0;
+  }
+}
+.redefine-pass{
+  color: map-get(col.$personal-accent,200);
+  cursor: pointer;
+}
+
+@keyframes animate {
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0%{
+    background-position-x: 0;
+  }
+  100%{
+    background-position-x: -1000px;
+  }
+}
+img{
+  width: 150px;
+  background: transparent!important;
+}
+input{
+  color:map-get(col.$personal-accent, 700)!important;
+}
+::ng-deep .mat-form-field-label {
+  color: map-get(col.$personal-accent,800)!important;
+}
+
+::ng-deep .mat-form-field-underline {
+  background-color: map-get(col.$personal-accent,800)!important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color:map-get(col.$personal-accent,800)!important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: map-get(col.$personal-accent,800) !important;
+}
+
+.main{
+  margin-top: -100px;
+}
+.log-in{
+  color: map-get(col.$personal-accent,800)!important;
+  span{
+    color: map-get(col.$personal-warn,700)!important;
+  }
+}

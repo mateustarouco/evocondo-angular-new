@@ -1,1 +1,162 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'colors' as col;
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$untitled-primary: mat.define-palette(col.$personal-primary);
+$untitled-accent: mat.define-palette(col.$personal-accent, A200, A100, A400);
+$untitled-warn: mat.define-palette(col.$personal-warn);
+
+
+$untitled-theme: mat.define-light-theme((
+  color: (
+    primary: $untitled-primary,
+    accent: $untitled-accent,
+    warn: $untitled-warn,
+  )
+));
+
+@include mat.all-component-themes($untitled-theme);
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: map-get(col.$personal-primary, 800)
+}
+
+.acting {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: .5;
+
+  svg {
+    width: 50px !important;
+  }
+}
+
+.bg {
+  min-height: 250px;
+  background-color: map-get(col.$personal-primary, 700);
+  box-shadow: inset 5px 0 50px #00000005,
+  inset -5px 0 50px #00000002,
+  inset 10px 0 50px #00000002'',
+  inset -10px 0 50px #00000005,
+  inset 15px 0 50px #00000005,
+  inset -15px 0 50px #00000005;
+  border: 2px solid map-get(col.$personal-accent, 50);
+}
+
+::ng-deep .mat-form-field-label {
+  color: map-get(col.$personal-accent,400)!important;
+}
+
+::ng-deep .mat-form-field-underline {
+  background-color: map-get(col.$personal-accent,400)!important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color:map-get(col.$personal-accent,400)!important;
+
+}
+
+::ng-deep .mat-form-field-label {
+  color: map-get(col.$personal-accent,400) !important;
+}
+
+::ng-deep .mat-form-field-flex {
+  ::ng-deep .mat-button-wrapper {
+    color: map-get(col.$personal-accent, 300) !important;
+  }
+}
+
+input {
+  height: 20px;
+  color: map-get(col.$personal-accent, 300)!important;
+}
+
+input:focus {
+  background: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: map-get(col.$personal-accent, 700);
+  -webkit-box-shadow: 0 0 0px 1000px map-get(col.$personal-primary, 900) inset;
+}
+
+.title {
+  padding: 1rem 0 .5rem 1rem;
+  color: map-get(col.$personal-accent, 400)!important;
+}
+
+.title_{
+  padding: 1rem 0 .5rem 1rem;
+  color: map-get(col.$personal-primary, 400)!important;
+}
+.fab-icon {
+  color: map-get(col.$personal-primary, 400)!important;
+  background: #ffffff05
+}
+
+.empty {
+  max-width: 400px;
+  opacity: .5;
+}
+table.primary{
+  vertical-align : middle;
+  th,td{
+    vertical-align : middle;
+    height: 48px!important;
+    color: map-get(col.$personal-accent, 500)!important;
+  }
+  tr{
+    border-bottom: 2px solid map-get(col.$personal-primary, 100)!important;
+  }
+}
+
+.op-5{
+  opacity: .5;
+}
+.color-ligth{
+  color: White!important;
+}
+.subtitle{
+  color: map-get(col.$personal-accent,500);
+}
+button:disabled{
+  background: map-get(col.$personal-warn,300)!important;
+  color: map-get(col.$personal-primary,200)!important;
+}
+.mat-dialog-container{
+  background: map-get(col.$personal-primary,400)!important;
+}
+h2{
+  color: map-get(col.$personal-warn,800)!important;
+}
+
+.space{
+  height: 100px;
+}
+.mat-option{
+  background: white!important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none!important;
+  margin: 0!important;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield!important;
+}
+

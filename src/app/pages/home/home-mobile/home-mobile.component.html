@@ -1,0 +1,66 @@
+<div class="container" *ngIf="!loading">
+  <div class="content">
+    <app-header-home ></app-header-home>
+    <div class="next-assembly">
+      <div class="item " *ngIf="assemblys.length > 0">
+        <section class="header row mb-2 pb-3">
+          <div class="col d-flex align-items-center">
+            <div class="bar"></div>
+          </div>
+          <div class="col-8 d-flex align-items-center data ">
+            Assembléias
+          </div>
+        </section>
+        <section class="values row" *ngFor="let assembly of assemblys" routerLink="/assembly/view"
+                 [queryParams]="[assembly.id, assembly.condominium_id]">
+          <div class="col-2 p-2">
+            <div class="status">
+              <mat-icon svgIcon="{{getIcon(assembly.status)}}"></mat-icon>
+            </div>
+          </div>
+          <div class="col description">
+            {{assembly.title}} - {{assembly.condominium_name}}<br>
+            <p>
+              Data Inicial:{{assembly.initial_date }}<br>
+              Data Final:{{assembly.final_date }}
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="item " *ngIf="assemblys_invalid.length > 0">
+        <section class="header row mb-2 pb-3">
+          <div class="col d-flex align-items-center">
+            <div class="bar"></div>
+          </div>
+          <div class="col-6 d-flex align-items-center data">
+            Aguardando Envio
+          </div>
+        </section>
+        <section class="values row" *ngFor="let assembly of assemblys_invalid" routerLink="/assembly/send"
+                 [queryParams]="[assembly.id, assembly.condominium_id]">
+          <div class="col-2 p-2">
+            <div class="status">
+              <mat-icon svgIcon="{{getIcon(assembly.status)}}"></mat-icon>
+            </div>
+          </div>
+          <div class="col description">
+            {{assembly.title}} - {{assembly.condominium_name}}<br>
+            <p>
+              Data Inicial: Aguardando<br>
+              Data Final: Aguardando
+            </p>
+          </div>
+        </section>
+
+      </div>
+      <div *ngIf="assemblys_invalid.length == 0 && assemblys.length ==0" class="empty">
+<!--        <app-empty></app-empty>-->
+        <h2 class="text-center">Ainda não há assembléias</h2>
+      </div>
+
+    </div>
+    <div class="shadow_"></div>
+  </div>
+</div>
